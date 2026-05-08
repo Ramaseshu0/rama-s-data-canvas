@@ -3,16 +3,16 @@ import { GraduationCap } from "lucide-react";
 
 const education = [
   {
-    degree: "Master of Engineering Science (Data Science)",
+    degree: "M.S. in Engineering Science — Data Science",
     school: "University at Buffalo, Buffalo, NY",
-    period: "2025 – 2026",
+    period: "2026 – Present",
     gpa: "3.5 / 4.0",
   },
   {
-    degree: "B.Tech – Electronics & Communication Engineering",
+    degree: "B.Tech — Electronics & Communication Engineering",
     school: "Amrita University, Bangalore, India",
     period: "2017 – 2021",
-    gpa: "7.28 / 10",
+    gpa: "—",
   },
 ];
 
@@ -49,7 +49,9 @@ const Education = () => {
               <p className="text-muted-foreground text-sm mb-3">{edu.school}</p>
               <div className="flex items-center justify-between text-xs font-display">
                 <span className="text-primary">{edu.period}</span>
-                <span className="text-muted-foreground">GPA: {edu.gpa}</span>
+                {edu.gpa !== "—" && (
+                  <span className="text-muted-foreground">GPA: {edu.gpa}</span>
+                )}
               </div>
             </motion.div>
           ))}
